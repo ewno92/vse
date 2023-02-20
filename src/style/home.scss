@@ -1,0 +1,10 @@
+#home {
+  display: flex;
+  .col {
+    width: calc(100% / 3);
+    background-color: yellow;
+    // flex-grow: 1;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+}
