@@ -1,6 +1,6 @@
 import React from "react";
 
-const HomeGallery = ({ item }) => {
+const HomeGallery = ({ item, index }) => {
   console.log("items", item);
   return (
     <div id="home-gallery">
@@ -15,7 +15,7 @@ const HomeGallery = ({ item }) => {
       <div class="title-wrap">
         <div class="rotate">
           <div class="sticky">
-            <span class="num">[001]</span>
+            <span class="num">[{index}]</span>
             <span class="title">ACR COFFEE -K SQUARE 2023</span>
           </div>
         </div>
