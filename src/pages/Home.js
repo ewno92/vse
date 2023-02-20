@@ -11,13 +11,19 @@ const Home = () => {
         </div>
       </div>
       <div className="col">
-        <div className="col-2">
+        <div>
           {images.map((img) => (
             <HomeGallery item={img} />
           ))}
         </div>
       </div>
-      <div className="col col-3">3333</div>
+      <div className="col">
+        <div>
+          {images.map((img) => (
+            <HomeGallery item={img} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

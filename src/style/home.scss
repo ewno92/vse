@@ -1,10 +1,12 @@
 #home {
   display: flex;
+  height: 100vh;
+
   .col {
+    padding-top: 20px;
     width: calc(100% / 3);
-    background-color: yellow;
+    // background-color: yellow;
     // flex-grow: 1;
     overflow-y: scroll;
-    height: 100vh;
   }
 }
