@@ -25,6 +25,8 @@ const Home = () => {
   }, []);
 
   console.log("width", width);
+  console.log("first", first);
+  console.log("second", second);
   return (
     <div id="home">
       <div className="col">
