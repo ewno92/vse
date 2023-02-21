@@ -3,9 +3,8 @@ export const formatNumber = (num) => {
 };
 
 export const divideImageList = (images) => {
-  const temp = images;
   const middleIndex = Math.ceil(images.length / 2);
-  const first = temp.splice(0, middleIndex);
-  const second = temp.splice(-middleIndex);
+  const first = images.splice(0, middleIndex);
+  const second = images.splice(-middleIndex);
   return [first, second];
 };
