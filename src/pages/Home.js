@@ -3,6 +3,7 @@ import Info from "../component/Info";
 import { images } from "../component/img";
 import HomeGallery from "../component/HomeGallery";
 import { formatNumber, divideImageList } from "../component/utils";
+import Contact from "../component/Contact";
 const Home = () => {
   const list = images;
   const [first, setFirst] = useState();
@@ -22,19 +23,20 @@ const Home = () => {
       <div className="col">
         <div className="info-wrap">
           <Info />
+          <Contact />
         </div>
       </div>
       <div className="col">
         <div>
           {first?.map((img, i) => (
-            <HomeGallery item={img} index={formatNumber(i + 1)} />
+            <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
           ))}
         </div>
       </div>
       <div className="col">
         <div>
           {second?.map((img, i) => (
-            <HomeGallery item={img} index={formatNumber(i + 1)} />
+            <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
           ))}
         </div>
       </div>
