@@ -26,16 +26,24 @@ const Home = () => {
           <Contact />
         </div>
       </div>
-      <div className="col">
+      <div className="col desktop-view">
         <div>
           {first?.map((img, i) => (
             <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
           ))}
         </div>
       </div>
-      <div className="col">
+      <div className="col desktop-view">
         <div>
           {second?.map((img, i) => (
+            <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+          ))}
+        </div>
+      </div>
+      {/* mobile view */}
+      <div className="col mobile-view">
+        <div>
+          {list?.map((img, i) => (
             <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
           ))}
         </div>

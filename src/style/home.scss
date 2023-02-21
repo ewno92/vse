@@ -9,4 +9,22 @@
     // flex-grow: 1;
     overflow-y: scroll;
   }
+  .mobile-view {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #home {
+    flex-direction: column;
+    .col {
+      width: 100%;
+    }
+    .desktop-view {
+      display: none;
+    }
+    .mobile-view {
+      display: block;
+    }
+  }
 }
