@@ -1,7 +1,6 @@
 import React from "react";
 
 const HomeGallery = ({ item, index }) => {
-  console.log("items", item);
   return (
     <div id="home-gallery">
       <div className="img-wrap">
@@ -12,11 +11,11 @@ const HomeGallery = ({ item, index }) => {
           height="600"
         ></img>
       </div>
-      <div class="title-wrap">
-        <div class="rotate">
-          <div class="sticky">
-            <span class="num">[{index}]</span>
-            <span class="title">ACR COFFEE -K SQUARE 2023</span>
+      <div className="title-wrap">
+        <div className="rotate">
+          <div className="sticky">
+            <span className="num">[{index}]</span>
+            <span className="title">ACR COFFEE -K SQUARE 2023</span>
           </div>
         </div>
       </div>

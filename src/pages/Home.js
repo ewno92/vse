@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Info from "../component/Info";
 import { images } from "../component/img";
 import HomeGallery from "../component/HomeGallery";
-import { formatNumber } from "../component/utils";
+import { formatNumber, divideImageList } from "../component/utils";
 const Home = () => {
+  const list = images;
+  const [first, setFirst] = useState();
+  const [second, setSecond] = useState();
+
+  useEffect(() => {
+    return () => {
+      const temp = [...list];
+      const firstAndSecondArray = divideImageList(temp);
+      setFirst(firstAndSecondArray[0]);
+      setSecond(firstAndSecondArray[1]);
+    };
+  }, []);
+
   return (
     <div id="home">
       <div className="col">
@@ -13,14 +26,14 @@ const Home = () => {
       </div>
       <div className="col">
         <div>
-          {images.map((img, i) => (
+          {first?.map((img, i) => (
             <HomeGallery item={img} index={formatNumber(i + 1)} />
           ))}
         </div>
       </div>
       <div className="col">
         <div>
-          {images.map((img, i) => (
+          {second?.map((img, i) => (
             <HomeGallery item={img} index={formatNumber(i + 1)} />
           ))}
         </div>
