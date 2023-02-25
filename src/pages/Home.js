@@ -12,19 +12,15 @@ const MAX_WIDTH = 1000;
 const Home = () => {
   const list = [...images];
   const { width } = useWindowDimensions();
-  const [first, setFirst] = useState();
-  const [second, setSecond] = useState();
+  // const [first, setFirst] = useState();
+  // const [second, setSecond] = useState();
 
-  useEffect(() => {
-    return async () => {
-      const temp = [...list];
-      let firstAndSecondArray;
-      firstAndSecondArray = divideImageList(temp);
-      setFirst([...firstAndSecondArray[0]]);
-      setSecond([...firstAndSecondArray[1]]);
-      console.log("temp", temp);
-    };
-  }, []);
+  const temp = [...list];
+  let firstAndSecondArray;
+  firstAndSecondArray = divideImageList(temp);
+  const first = firstAndSecondArray[0];
+  const second = firstAndSecondArray[1];
+  console.log("temp", temp);
 
   console.log("width", width);
   console.log("first", first);
