@@ -11,7 +11,7 @@ import Contact from "../component/Contact";
 const MAX_WIDTH = 1000;
 const Home = () => {
   const { width } = useWindowDimensions();
-  const list = images;
+  const [list, setList] = useState(images);
   const [first, setFirst] = useState();
   const [second, setSecond] = useState();
 
@@ -30,12 +30,6 @@ const Home = () => {
   console.log("second", second);
   return (
     <div id="home">
-      <div className="col">
-        <div className="info-wrap">
-          <Info />
-          <Contact />
-        </div>
-      </div>
       {width > MAX_WIDTH && (
         <div className="col desktop-view">
           <div>
@@ -55,6 +49,13 @@ const Home = () => {
           </div>
         </div>
       )}
+
+      <div className="col">
+        <div className="info-wrap">
+          <Info />
+          <Contact />
+        </div>
+      </div>
 
       {/* mobile view */}
       {!(width > MAX_WIDTH) && (
