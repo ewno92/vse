@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
 import Info from "../component/Info";
-import { images } from "../component/img";
+import { first, second } from "../component/img";
 import HomeGallery from "../component/HomeGallery";
 import {
   formatNumber,
@@ -10,28 +9,10 @@ import {
 import Contact from "../component/Contact";
 const MAX_WIDTH = 1000;
 const Home = () => {
-  const list = [...images];
   const { width } = useWindowDimensions();
-  // const [first, setFirst] = useState();
-  // const [second, setSecond] = useState();
 
-  const temp = [...list];
-  let firstAndSecondArray;
-  firstAndSecondArray = divideImageList(temp);
-  const first = firstAndSecondArray[0];
-  const second = firstAndSecondArray[1];
-  console.log("temp", temp);
+  const list = [...first, ...second];
 
-  console.log("width", width);
-  console.log("first", first);
-  console.log("second", second);
-
-  useEffect(() => {
-    return async () => {
-      console.log(first);
-      console.log(second);
-    };
-  }, [width]);
   return (
     <div id="home">
       {width > MAX_WIDTH && (
