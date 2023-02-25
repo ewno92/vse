@@ -18,11 +18,14 @@ const Home = () => {
   useEffect(() => {
     return async () => {
       const temp = [...list];
-      const firstAndSecondArray = await divideImageList(temp);
-      setFirst(firstAndSecondArray[0]);
-      setSecond(firstAndSecondArray[1]);
+      let firstAndSecondArray;
+      do {
+        firstAndSecondArray = divideImageList(temp);
+        setFirst(firstAndSecondArray[0]);
+        setSecond(firstAndSecondArray[1]);
+      } while ((first, second));
     };
-  }, []);
+  }, [first, second]);
 
   console.log("width", width);
   console.log("first", first);
