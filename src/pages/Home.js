@@ -28,6 +28,13 @@ const Home = () => {
   console.log("width", width);
   console.log("first", first);
   console.log("second", second);
+
+  useEffect(() => {
+    return async () => {
+      console.log(first);
+      console.log(second);
+    };
+  }, [width]);
   return (
     <div id="home">
       {width > MAX_WIDTH && (
