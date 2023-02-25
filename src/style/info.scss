@@ -21,3 +21,12 @@
     }
   }
 }
+
+@media screen and (max-width: $MAX_WIDTH) {
+  #info {
+    padding-top: 20px;
+    .copy-right {
+      display: none;
+    }
+  }
+}

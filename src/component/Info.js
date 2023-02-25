@@ -38,7 +38,7 @@ const Info = () => {
               <span className="underline">INSTAGRAM</span>
             </a>
           </div>
-          <div className="item-copyright none block-lg">
+          <div className="item-copyright none block-lg copy-right">
             (C) 2015. SALADBOWL_DESIGN CO.
             <br />
             ALL RIGHT RESERVED.
