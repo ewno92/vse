@@ -60,10 +60,12 @@ const Home = () => {
       {/* mobile view */}
       {!(width > MAX_WIDTH) && (
         <div className="col mobile-view">
-          <div>
-            {list?.map((img, i) => (
-              <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
-            ))}
+          <div style={{ paddingTop: "300px" }}>
+            <div style={{ background: "white" }}>
+              {list?.map((img, i) => (
+                <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+              ))}
+            </div>
           </div>
         </div>
       )}
