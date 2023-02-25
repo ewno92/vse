@@ -20,8 +20,8 @@ const Home = () => {
       const temp = [...list];
       let firstAndSecondArray;
       firstAndSecondArray = divideImageList(temp);
-      setFirst(firstAndSecondArray[0]);
-      setSecond(firstAndSecondArray[1]);
+      setFirst([...firstAndSecondArray[0]]);
+      setSecond([...firstAndSecondArray[1]]);
     };
   }, [list]);
 
