@@ -14,7 +14,7 @@ const Home = () => {
   const [list, setList] = useState(images);
   const [first, setFirst] = useState();
   const [second, setSecond] = useState();
-
+  setList(images);
   useEffect(() => {
     return async () => {
       const temp = [...list];
