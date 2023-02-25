@@ -10,11 +10,11 @@ import {
 import Contact from "../component/Contact";
 const MAX_WIDTH = 1000;
 const Home = () => {
+  const list = [...images];
   const { width } = useWindowDimensions();
-  const [list, setList] = useState(images);
   const [first, setFirst] = useState();
   const [second, setSecond] = useState();
-  setList(images);
+
   useEffect(() => {
     return async () => {
       const temp = [...list];
@@ -24,7 +24,7 @@ const Home = () => {
       setSecond([...firstAndSecondArray[1]]);
       console.log("temp", temp);
     };
-  }, [list]);
+  }, []);
 
   console.log("width", width);
   console.log("first", first);
