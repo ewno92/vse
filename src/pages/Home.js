@@ -19,19 +19,23 @@ const Home = () => {
     return async () => {
       const temp = [...list];
       let firstAndSecondArray;
-      do {
-        firstAndSecondArray = divideImageList(temp);
-        setFirst(firstAndSecondArray[0]);
-        setSecond(firstAndSecondArray[1]);
-      } while (first && second);
+      firstAndSecondArray = divideImageList(temp);
+      setFirst(firstAndSecondArray[0]);
+      setSecond(firstAndSecondArray[1]);
     };
-  }, [first, second]);
+  }, [list]);
 
   console.log("width", width);
   console.log("first", first);
   console.log("second", second);
   return (
     <div id="home">
+      <div className="col">
+        <div className="info-wrap">
+          <Info />
+          <Contact />
+        </div>
+      </div>
       {width > MAX_WIDTH && (
         <div className="col desktop-view">
           <div>
@@ -51,12 +55,7 @@ const Home = () => {
           </div>
         </div>
       )}
-      <div className="col">
-        <div className="info-wrap">
-          <Info />
-          <Contact />
-        </div>
-      </div>
+
       {/* mobile view */}
       {!(width > MAX_WIDTH) && (
         <div className="col mobile-view">
