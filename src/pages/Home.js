@@ -16,9 +16,9 @@ const Home = () => {
   const [second, setSecond] = useState();
 
   useEffect(() => {
-    return () => {
+    return async () => {
       const temp = [...list];
-      const firstAndSecondArray = divideImageList(temp);
+      const firstAndSecondArray = await divideImageList(temp);
       setFirst(firstAndSecondArray[0]);
       setSecond(firstAndSecondArray[1]);
     };
@@ -29,12 +29,6 @@ const Home = () => {
   console.log("second", second);
   return (
     <div id="home">
-      <div className="col">
-        <div className="info-wrap">
-          <Info />
-          <Contact />
-        </div>
-      </div>
       {width > MAX_WIDTH && (
         <div className="col desktop-view">
           <div>
@@ -54,6 +48,12 @@ const Home = () => {
           </div>
         </div>
       )}
+      <div className="col">
+        <div className="info-wrap">
+          <Info />
+          <Contact />
+        </div>
+      </div>
       {/* mobile view */}
       {!(width > MAX_WIDTH) && (
         <div className="col mobile-view">
