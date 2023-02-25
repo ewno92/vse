@@ -15,6 +15,16 @@ const Home = () => {
 
   return (
     <div id="home">
+      {!(width > MAX_WIDTH) && <h1 className="logo">VSE</h1>}
+      {width > MAX_WIDTH && (
+        <div className="col desktop-view">
+          <div>
+            {first?.map((img, i) => (
+              <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+            ))}
+          </div>
+        </div>
+      )}
       {width > MAX_WIDTH && (
         <div className="col desktop-view">
           <div>

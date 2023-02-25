@@ -13,26 +13,6 @@ const Contact = () => {
 
   return (
     <div id="contact">
-      <div className="btn-wrap">
-        <span
-          className={`${contact ? `text-animation-on` : ""} " text-animation`}
-          onClick={() => {
-            if (!contact && location) setLocation(false);
-            setContact(!contact);
-          }}
-        >
-          CONTACT
-        </span>
-        <span
-          className={`${location ? `text-animation-on` : ""} " text-animation`}
-          onClick={() => {
-            if (contact && !location) setContact(false);
-            setLocation(!location);
-          }}
-        >
-          LOCATION
-        </span>
-      </div>
       {location && <div className="conatct-display">location</div>}
       {contact && (
         <div className="conatct-display">
@@ -153,6 +133,26 @@ const Contact = () => {
           </div>
         </div>
       )}
+      <div className="btn-wrap">
+        <span
+          className={`${contact ? `text-animation-on` : ""} " text-animation`}
+          onClick={() => {
+            if (!contact && location) setLocation(false);
+            setContact(!contact);
+          }}
+        >
+          CONTACT
+        </span>
+        <span
+          className={`${location ? `text-animation-on` : ""} " text-animation`}
+          onClick={() => {
+            if (contact && !location) setContact(false);
+            setLocation(!location);
+          }}
+        >
+          LOCATION
+        </span>
+      </div>
     </div>
   );
 };
