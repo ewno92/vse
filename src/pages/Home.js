@@ -35,21 +35,30 @@ const Home = () => {
         </div>
       )}
 
-      <div className="col">
-        <div className="info-wrap">
-          <Info />
-          <Contact />
+      {width > MAX_WIDTH && (
+        <div className="col">
+          <div className="info-wrap">
+            <Info />
+            <Contact />
+          </div>
         </div>
-      </div>
+      )}
 
       {/* mobile view */}
       {!(width > MAX_WIDTH) && (
-        <div className="col mobile-view">
-          <div style={{ paddingTop: "300px" }}>
-            <div style={{ background: "white" }}>
-              {list?.map((img, i) => (
-                <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
-              ))}
+        <div className="col mobile-view " style={{ paddingTop: "" }}>
+          <div>
+            <div>
+              <div className="fixed">
+                <Info />
+              </div>
+              <div
+                style={{ background: "white", paddingTop: "400px", zIndex: 3 }}
+              >
+                {list?.map((img, i) => (
+                  <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

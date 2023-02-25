@@ -3,6 +3,7 @@ $MAX_WIDTH: 1000px;
 #home {
   display: flex;
   height: 100vh;
+  width: 100%;
 
   .col {
     padding-top: 20px;
@@ -27,9 +28,17 @@ $MAX_WIDTH: 1000px;
     // .desktop-view {
     //   display: none;
     // }
+    .mobile-info-wrap {
+      position: fixed;
+    }
     .mobile-view {
       position: absolute;
       // padding-top: 300px;
+    }
+    .fixed {
+      position: fixed;
+      top: 0;
+      // z-index: 1;
     }
   }
 }
