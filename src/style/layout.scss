@@ -2,4 +2,32 @@
   display: flex;
   justify-content: center;
   position: relative;
+
+  .text-animation {
+    // cursor: pointer;
+    // display: inline-block;
+    // position: relative;
+    //
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .text-animation::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 0.1em;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+    transform: translateY(-100%);
+  }
+
+  .text-animation-on::after {
+    opacity: 1;
+    transform: translateY(0);
+    // background-size: 10% 1.1em, 100% 1.1em;
+  }
 }

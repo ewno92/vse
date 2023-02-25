@@ -2,7 +2,7 @@
   word-break: keep-all;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   padding-left: 14px;
   padding-right: 24px;
   a {
@@ -24,6 +24,7 @@
 
 @media screen and (max-width: $MAX_WIDTH) {
   #info {
+    // width: 100vw;
     padding-top: 20px;
     .copy-right {
       display: none;

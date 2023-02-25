@@ -9,11 +9,12 @@
     width: 40px;
     display: flex;
     align-items: flex-start;
+
     span {
       writing-mode: vertical-rl;
+      font-size: 11px;
+      padding: 0px 3px;
       cursor: pointer;
-      display: inline-block;
-      position: relative;
     }
   }
   .conatct-display {

@@ -15,7 +15,7 @@ const Contact = () => {
     <div id="contact">
       <div className="btn-wrap">
         <span
-          style={{ color: contact && "red" }}
+          className={`${contact ? `text-animation-on` : ""} " text-animation`}
           onClick={() => {
             if (!contact && location) setLocation(false);
             setContact(!contact);
@@ -24,7 +24,7 @@ const Contact = () => {
           CONTACT
         </span>
         <span
-          style={{ color: location && "red" }}
+          className={`${location ? `text-animation-on` : ""} " text-animation`}
           onClick={() => {
             if (contact && !location) setContact(false);
             setLocation(!location);
