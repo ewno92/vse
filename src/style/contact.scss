@@ -5,9 +5,26 @@
   padding-right: 24px;
   display: flex;
   justify-content: flex-end;
+  font-size: 12px;
+  input,
+  input:focus-visible,
+  input:focus {
+    width: 100%;
+    border: hidden;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+  }
+  textarea {
+    width: calc(100% - 40px);
+    height: 200px;
+    resize: none;
+  }
   .btn-wrap {
     // background: yellow;
     width: 40px;
+    height: fit-content;
     display: flex;
     align-items: flex-start;
 
@@ -22,5 +39,7 @@
     width: 100%;
     // background: gray;
     text-align: left;
+    font-size: 12px;
+    font-weight: 600;
   }
 }

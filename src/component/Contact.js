@@ -29,7 +29,6 @@ const Contact = () => {
                     data-terget="bc_writer_name"
                     required="required"
                   />
-                  <div className="textarea-placeholder">이름</div>
                   <input
                     type="hidden"
                     name="bc_writer_name"
@@ -58,9 +57,6 @@ const Contact = () => {
                   />
                   <div className="textarea-placeholder">전화번호</div>
                   <input
-                    type="hidden"
-                    name="bc_subtitle"
-                    id="bc_subtitle"
                     className="input-default valid_input"
                     required="required"
                     placeholder="전화번호"
@@ -83,17 +79,11 @@ const Contact = () => {
                     data-terget="bc_writer_email"
                     required="required"
                   />
-                  <div className="textarea-placeholder">메일</div>
                   <input
-                    type="hidden"
-                    id="bc_writer_email"
-                    name="bc_writer_email"
-                    className="input-default valid_input"
                     required="required"
                     placeholder="메일"
                     data-exp="email"
                     data-label="메일"
-                    defaultValue=""
                   />
                 </div>
               </div>
@@ -101,11 +91,7 @@ const Contact = () => {
             <div className="form-group type-content">
               <div className="form-title">
                 <label htmlFor="bc_content">
-                  MEMO 내용{" "}
-                  <p className="desc">
-                    공사 하실 곳과 평형 수, 공사 시기등을 문의 내용으로
-                    기재해주세요.
-                  </p>
+                  MEMO 내용 <p className="desc"></p>
                 </label>
               </div>
               <div className="form-content">
@@ -119,12 +105,11 @@ const Contact = () => {
                     name="bc_content"
                     id="bc_content"
                     className="hide input-textarea valid_input"
-                    cols={10}
-                    rows={10}
+                    // cols={10}
+                    // rows={10}
                     required="required"
-                    placeholder="내용"
-                    data-label="내용"
-                    defaultValue={""}
+                    placeholder="공사 하실 곳과 평형 수, 공사 시기등을 문의 내용으로
+                    기재해주세요."
                   />
                   <span className="content-underline" />
                 </div>
