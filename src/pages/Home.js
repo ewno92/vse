@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div id="home">
       <h1 className="logo">VSE</h1>
-
+      {selected && <Modal selected={selected} setSelected={setSelected} />}
       {width > MAX_WIDTH && (
         <div className="col desktop-view">
           <div>
@@ -24,8 +24,6 @@ const Home = () => {
                 key={i}
                 onClick={() => {
                   setSelected(first[i].modal);
-                  console.log("@selc", i);
-                  console.log("@selc", selected);
                 }}
               >
                 <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
@@ -38,12 +36,14 @@ const Home = () => {
         <div className="col desktop-view">
           <div>
             {second?.map((img, i) => (
-              <HomeGallery
+              <div
                 key={i}
-                item={img}
-                index={formatNumber(i + 1)}
-                // setIsOpen={setIsOpen}
-              />
+                onClick={() => {
+                  setSelected(second[i]?.modal);
+                }}
+              >
+                <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+              </div>
             ))}
           </div>
         </div>
@@ -56,7 +56,6 @@ const Home = () => {
           </div>
         </div>
       )}
-      {selected && <Modal selected={selected} setSelected={setSelected} />}
       {/* mobile view */}
       {!(width > MAX_WIDTH) && (
         <div className="col mobile-view " style={{ paddingTop: "" }}>
@@ -69,12 +68,18 @@ const Home = () => {
                 style={{ background: "white", paddingTop: "400px", zIndex: 3 }}
               >
                 {list?.map((img, i) => (
-                  <HomeGallery
+                  <div
                     key={i}
-                    item={img}
-                    index={formatNumber(i + 1)}
-                    // setIsOpen={setIsOpen}
-                  />
+                    onClick={() => {
+                      setSelected(list[i].modal);
+                    }}
+                  >
+                    <HomeGallery
+                      key={i}
+                      item={img}
+                      index={formatNumber(i + 1)}
+                    />
+                  </div>
                 ))}
               </div>
             </div>

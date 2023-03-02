@@ -7,15 +7,16 @@ const Modal = ({ selected, setSelected }) => {
       <span className="btn" onClick={() => setSelected(false)}>
         {`<-`}BACK
       </span>
-      {selected.map((img) => {
-        return (
-          <div>
+
+      <div>
+        {selected.map((img) => {
+          return (
             <img src={img} alt="Girl in a jacket" width="500" height="600" />
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
       <span className="btn" onClick={() => setSelected(false)}>
-        BACK
+        {`<-`}BACK
       </span>
     </div>
   );
