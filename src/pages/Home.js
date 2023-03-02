@@ -3,19 +3,15 @@ import { first, second } from "../component/img";
 import HomeGallery from "../component/HomeGallery";
 import Modal from "../component/Modal";
 
-import {
-  formatNumber,
-  divideImageList,
-  useWindowDimensions,
-} from "../component/utils";
+import { formatNumber, useWindowDimensions } from "../component/utils";
 import Contact from "../component/Contact";
 import { useState } from "react";
 const MAX_WIDTH = 1000;
 const Home = () => {
   const { width } = useWindowDimensions();
   const list = [...first, ...second];
-  const [isOpen, setIsOpen] = useState(false);
-
+  const [selected, setSelected] = useState(false);
+  console.log("@selected", selected);
   return (
     <div id="home">
       <h1 className="logo">VSE</h1>
@@ -24,12 +20,16 @@ const Home = () => {
         <div className="col desktop-view">
           <div>
             {first?.map((img, i) => (
-              <HomeGallery
+              <div
                 key={i}
-                item={img}
-                index={formatNumber(i + 1)}
-                setIsOpen={setIsOpen}
-              />
+                onClick={() => {
+                  setSelected(first[i].modal);
+                  console.log("@selc", i);
+                  console.log("@selc", selected);
+                }}
+              >
+                <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+              </div>
             ))}
           </div>
         </div>
@@ -42,7 +42,7 @@ const Home = () => {
                 key={i}
                 item={img}
                 index={formatNumber(i + 1)}
-                setIsOpen={setIsOpen}
+                // setIsOpen={setIsOpen}
               />
             ))}
           </div>
@@ -56,7 +56,7 @@ const Home = () => {
           </div>
         </div>
       )}
-      {isOpen && <Modal setIsOpen={setIsOpen} />}
+      {selected && <Modal selected={selected} setSelected={setSelected} />}
       {/* mobile view */}
       {!(width > MAX_WIDTH) && (
         <div className="col mobile-view " style={{ paddingTop: "" }}>
@@ -73,7 +73,7 @@ const Home = () => {
                     key={i}
                     item={img}
                     index={formatNumber(i + 1)}
-                    setIsOpen={setIsOpen}
+                    // setIsOpen={setIsOpen}
                   />
                 ))}
               </div>
