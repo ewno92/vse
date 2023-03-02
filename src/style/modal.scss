@@ -1,0 +1,19 @@
+#modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+  padding: 20px 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+
+  .btn {
+    cursor: pointer;
+    padding: 40px 0px;
+    width: fit-content;
+  }
+}

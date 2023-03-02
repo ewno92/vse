@@ -1,9 +1,9 @@
 import React from "react";
 
-const HomeGallery = ({ item, index }) => {
+const HomeGallery = ({ item, index, setIsOpen }) => {
   return (
     <div id="home-gallery">
-      <div className="img-wrap">
+      <div className="img-wrap" onClick={() => setIsOpen(true)}>
         <img
           src={item.add}
           alt="Girl in a jacket"
