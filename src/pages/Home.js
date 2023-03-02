@@ -65,7 +65,7 @@ const Home = () => {
                 <Info />
               </div>
               <div
-                style={{ background: "white", paddingTop: "400px", zIndex: 3 }}
+                style={{ background: "white", paddingTop: "270px", zIndex: 3 }}
               >
                 {list?.map((img, i) => (
                   <div
