@@ -6,6 +6,11 @@
   display: flex;
   justify-content: flex-end;
   font-size: 12px;
+  .desc {
+    color: #898989;
+    font-size: 10px;
+    margin-top: 1px;
+  }
   input,
   input:focus-visible,
   input:focus {
@@ -24,6 +29,13 @@
     height: 200px;
     resize: none;
     border: none;
+    font-size: 11px;
+  }
+  input.has-text {
+    text-decoration: underline;
+  }
+  textarea.has-text {
+    text-decoration: underline;
   }
   textarea:focus,
   input:focus {
