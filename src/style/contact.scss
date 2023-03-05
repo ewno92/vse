@@ -25,6 +25,10 @@
     resize: none;
     border: none;
   }
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
   .btn-wrap {
     // background: yellow;
     width: 40px;
