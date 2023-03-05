@@ -29,10 +29,12 @@ const Info = () => {
               <span className="underline">INSTAGRAM</span>
             </a>
           </div>
-          <div className="item-copyright none block-lg copy-right">
-            (C) 2015. SALADBOWL_DESIGN CO.
-            <br />
-            ALL RIGHT RESERVED.
+          <div className="copyright none block-lg copy-right">
+            <span>
+              (C) 2015. SALADBOWL_DESIGN CO.
+              <br />
+            </span>
+            <span>ALL RIGHT RESERVED.</span>
           </div>
         </div>
       </article>
