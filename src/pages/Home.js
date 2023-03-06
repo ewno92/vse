@@ -60,26 +60,24 @@ const Home = () => {
       {!(width > MAX_WIDTH) && (
         <div className="col mobile-view " style={{ paddingTop: "" }}>
           <div className="fixed">
-            <Info />
-            <div className="btn-wrap">
-              <div id="info">
-                <article className="information-wrap">
-                  <div className="rotate">
-                    <div>
-                      <span>PROJECT</span>
-                    </div>
-                    <div>
-                      <span>PROJECT</span>
-                    </div>
-                    <div>
-                      <span>CONTACT</span>
-                    </div>
+            <div id="btn-wrap">
+              <article className="information-wrap">
+                <div className="rotate">
+                  <div>
+                    <span className="btn">PROJECT</span>
                   </div>
-                </article>
-              </div>
+                  <div>
+                    <span className="btn">PROJECT</span>
+                  </div>
+                  <div>
+                    <span className="btn">CONTACT</span>
+                  </div>
+                </div>
+              </article>
             </div>
+            <Info />
           </div>
-          <div style={{ background: "white", paddingTop: "600px", zIndex: 3 }}>
+          <div style={{ background: "white", paddingTop: "400px", zIndex: 3 }}>
             {list?.map((img, i) => (
               <div
                 key={i}

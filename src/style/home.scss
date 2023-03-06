@@ -14,13 +14,8 @@ $MAX_WIDTH: 1000px;
   .col {
     padding-top: 20px;
     width: calc(100% / 3);
-    // background-color: yellow;
-    // flex-grow: 1;
     overflow-y: scroll;
   }
-  // .mobile-view {
-  //   display: none;
-  // }
 }
 
 @media screen and (max-width: $MAX_WIDTH) {
@@ -31,21 +26,46 @@ $MAX_WIDTH: 1000px;
       padding: 0;
       height: 100vh;
     }
-    // .desktop-view {
-    //   display: none;
-    // }
+
     .mobile-info-wrap {
       position: fixed;
     }
     .mobile-view {
       position: absolute;
-      // padding-top: 300px;
     }
     .fixed {
       position: fixed;
       top: 0;
       right: 0;
-      // z-index: 1;
+    }
+
+    #btn-wrap {
+      word-break: keep-all;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 40px;
+      padding-right: 10px;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .copy-right {
+        text-decoration: underline;
+      }
+
+      .underline {
+        text-decoration: overline;
+      }
+      .information-wrap {
+        writing-mode: vertical-rl;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        .rotate {
+          text-align: initial;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
