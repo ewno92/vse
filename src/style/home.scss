@@ -42,7 +42,7 @@ $MAX_WIDTH: 1000px;
         flex-direction: column;
         align-items: flex-end;
         margin-top: 30px;
-        padding-right: 4px;
+        padding-right: 8px;
         .information-wrap {
           writing-mode: vertical-rl;
           text-transform: uppercase;
@@ -53,7 +53,7 @@ $MAX_WIDTH: 1000px;
           }
         }
         span {
-          margin-left: 5px;
+          margin-left: 8px;
         }
       }
     }
