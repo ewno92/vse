@@ -11,7 +11,9 @@ const ContactForm = () => {
       {contact && <Contact />}
       <div className="btn-wrap">
         <span
-          className={`${contact ? `text-animation-on` : ""} " text-animation`}
+          className={`${
+            contact ? `text-animation-on` : ""
+          } " text-animation contact_rotate`}
           onClick={() => {
             if (!contact && location) setLocation(false);
             setContact(!contact);
@@ -20,7 +22,9 @@ const ContactForm = () => {
           CONTACT
         </span>
         <span
-          className={`${location ? `text-animation-on` : ""} " text-animation`}
+          className={`${
+            location ? `text-animation-on` : ""
+          } " text-animation contact_rotate`}
           onClick={() => {
             if (contact && !location) setContact(false);
             setLocation(!location);

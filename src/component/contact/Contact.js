@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
-
+import { apiPost } from "../utils";
 const Contact = () => {
   const [info, setInfo] = useState({});
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
   };
-  const handleSubmit = () => {
+  const url =
+    "https://script.google.com/macros/s/AKfycbxbhw1-NIVBUnB133k8-kC8MrXaDI9QrjuMjVXrgZvcpV8SyHCgzpfz2jb1nbeZTNkN/exec";
+  const handleSubmit = async () => {
     alert("submit");
+    const res = await apiPost(url, {
+      name: "abc",
+      email: "asdb",
+      number: "sdion",
+      content: "sdjklfsd",
+    });
+    console.log(res);
+    // const res = await signin("auth/login", userData);
   };
   return (
     <div id="contact">

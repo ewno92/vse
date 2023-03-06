@@ -19,6 +19,20 @@ function getWindowDimensions() {
   };
 }
 
+export const apiPost = async (url, post) => {
+  const res = await fetch(url, {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(post),
+  });
+
+  const data = await res.json();
+  return data;
+};
+
 export function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
