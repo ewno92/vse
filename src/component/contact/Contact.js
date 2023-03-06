@@ -53,10 +53,11 @@ const Contact = () => {
           value={info?.content}
         />
       </form>
-
-      <span className="btn" onClick={handleSubmit}>
-        ENTER
-      </span>
+      <div className="btn-wrap">
+        <span className="btn enter" onClick={handleSubmit}>
+          ENTER
+        </span>
+      </div>
     </div>
   );
 };

@@ -62,9 +62,19 @@
   input:focus {
     outline: none;
   }
-  .btn:hover {
-    font-weight: 700;
-    text-decoration: underline;
+
+  .btn-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .btn:hover {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .enter {
+      text-align: center;
+      align-self: center;
+    }
   }
 }
 
