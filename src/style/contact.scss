@@ -1,4 +1,4 @@
-#contact {
+#contact-form {
   min-height: 386px;
   margin-top: 10vh;
   padding-left: 14px;
@@ -11,6 +11,28 @@
     font-size: 10px;
     margin-top: 1px;
   }
+
+  .btn-wrap {
+    width: 40px;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+
+    span {
+      writing-mode: vertical-rl;
+      font-size: 11px;
+      padding: 0px 3px;
+      cursor: pointer;
+    }
+  }
+}
+
+#contact {
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+
   input,
   input:focus-visible,
   input:focus {
@@ -20,7 +42,6 @@
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: hidden;
-    // margin-top: 3px;
     padding: 5px 0px;
     font-size: 11px;
   }
@@ -41,25 +62,11 @@
   input:focus {
     outline: none;
   }
-  .btn-wrap {
-    // background: yellow;
-    width: 40px;
-    height: fit-content;
-    display: flex;
-    align-items: flex-start;
+}
 
-    span {
-      writing-mode: vertical-rl;
-      font-size: 11px;
-      padding: 0px 3px;
-      cursor: pointer;
-    }
-  }
-  .conatct-display {
-    width: 100%;
-    // background: gray;
-    text-align: left;
-    font-size: 12px;
-    font-weight: 600;
-  }
+#location {
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
 }

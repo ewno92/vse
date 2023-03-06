@@ -4,7 +4,7 @@ import HomeGallery from "../component/HomeGallery";
 import Modal from "../component/Modal";
 
 import { formatNumber, useWindowDimensions } from "../component/utils";
-import Contact from "../component/Contact";
+import ContactForm from "../component/contact/ContactForm";
 import { useState } from "react";
 const MAX_WIDTH = 1000;
 const Home = () => {
@@ -52,7 +52,7 @@ const Home = () => {
         <div className="col">
           <div className="info-wrap">
             <Info />
-            <Contact />
+            <ContactForm />
           </div>
         </div>
       )}
