@@ -59,30 +59,37 @@ const Home = () => {
       {/* mobile view */}
       {!(width > MAX_WIDTH) && (
         <div className="col mobile-view " style={{ paddingTop: "" }}>
-          <div>
-            <div>
-              <div className="fixed">
-                <Info />
-              </div>
-              <div
-                style={{ background: "white", paddingTop: "270px", zIndex: 3 }}
-              >
-                {list?.map((img, i) => (
-                  <div
-                    key={i}
-                    onClick={() => {
-                      setSelected(list[i].modal);
-                    }}
-                  >
-                    <HomeGallery
-                      key={i}
-                      item={img}
-                      index={formatNumber(i + 1)}
-                    />
+          <div className="fixed">
+            <Info />
+            <div className="btn-wrap">
+              <div id="info">
+                <article className="information-wrap">
+                  <div className="rotate">
+                    <div>
+                      <span>PROJECT</span>
+                    </div>
+                    <div>
+                      <span>PROJECT</span>
+                    </div>
+                    <div>
+                      <span>CONTACT</span>
+                    </div>
                   </div>
-                ))}
+                </article>
               </div>
             </div>
+          </div>
+          <div style={{ background: "white", paddingTop: "600px", zIndex: 3 }}>
+            {list?.map((img, i) => (
+              <div
+                key={i}
+                onClick={() => {
+                  setSelected(list[i].modal);
+                }}
+              >
+                <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+              </div>
+            ))}
           </div>
         </div>
       )}

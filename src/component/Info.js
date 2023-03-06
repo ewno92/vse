@@ -5,7 +5,7 @@ const Info = () => {
     <div id="info">
       <article className="information-wrap">
         <div className="rotate">
-          <div className="item-address">
+          <div>
             <a href="https://vse.vercel.com" className="map" target="_blank">
               <div className="ko">
                 <span className="underline">
@@ -19,17 +19,17 @@ const Info = () => {
               </div>
             </a>
           </div>
-          <div className="item-contact">
+          <div>
             <a href="tel:02-3442-0401">[TEL] 02-3442-0401</a>
             <div>[FAX] 02-3442-0402</div>
             <a href="mailto:vse@gmail.com">saladbowldesign@gmail.com</a>
           </div>
-          <div className="item-sns">
+          <div>
             <a href="https://www.instagram.com/vse_87/" target="_blank">
               <span className="underline">INSTAGRAM</span>
             </a>
           </div>
-          <div className="copyright none block-lg copy-right">
+          <div>
             <span>
               (C) 2015. SALADBOWL_DESIGN CO.
               <br />
