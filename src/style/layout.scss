@@ -14,7 +14,7 @@
     bottom: 0;
     left: 0;
     height: 100%;
-    width: 0.1em;
+    width: 1px;
     background-color: black;
     opacity: 0;
     transition: opacity 300ms, transform 300ms;
@@ -25,5 +25,20 @@
     opacity: 1;
     transform: translateY(0);
     // background-size: 10% 1.1em, 100% 1.1em;
+  }
+
+  .btn {
+    cursor: pointer;
+  }
+
+  //dont allow highlight
+  span {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
   }
 }

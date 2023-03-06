@@ -6,12 +6,18 @@ import Modal from "../component/Modal";
 import { formatNumber, useWindowDimensions } from "../component/utils";
 import ContactForm from "../component/contact/ContactForm";
 import { useState } from "react";
+import Contact from "../component/contact/Contact";
+import Location from "../component/contact/Location";
 const MAX_WIDTH = 1000;
 const Home = () => {
   const { width } = useWindowDimensions();
   const list = [...first, ...second];
   const [selected, setSelected] = useState(false);
-  console.log("@selected", selected);
+
+  //mobile btn
+  const [project1, setProject1] = useState(true);
+  const [project2, setProject2] = useState(false);
+  const [contact, setContact] = useState(false);
   return (
     <div id="home">
       <h1 className="logo">VSE</h1>
@@ -64,30 +70,77 @@ const Home = () => {
               <article className="information-wrap">
                 <div className="rotate">
                   <div>
-                    <span className="btn">PROJECT</span>
+                    <span
+                      className={`${
+                        contact ? `text-animation-on` : ""
+                      } " text-animation btn`}
+                      onClick={() => {
+                        setContact(true);
+                        setProject1(false);
+                        setProject2(false);
+                      }}
+                    >
+                      CONTACT
+                    </span>
                   </div>
-                  <div>
-                    <span className="btn">PROJECT</span>
-                  </div>
-                  <div>
-                    <span className="btn">CONTACT</span>
-                  </div>
+                  <span
+                    className={`${
+                      project1 ? `text-animation-on` : ""
+                    } " text-animation btn`}
+                    onClick={() => {
+                      setContact(false);
+                      setProject1(true);
+                      setProject2(false);
+                    }}
+                  >
+                    PROJECT1
+                  </span>
+                  <span
+                    className={`${
+                      project2 ? `text-animation-on` : ""
+                    } " text-animation btn`}
+                    onClick={() => {
+                      setContact(false);
+                      setProject1(false);
+                      setProject2(true);
+                    }}
+                  >
+                    PROJECT2
+                  </span>
                 </div>
               </article>
             </div>
             <Info />
           </div>
-          <div style={{ background: "white", paddingTop: "400px", zIndex: 3 }}>
-            {list?.map((img, i) => (
-              <div
-                key={i}
-                onClick={() => {
-                  setSelected(list[i].modal);
-                }}
-              >
-                <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+          <div style={{ background: "white", paddingTop: "380px", zIndex: 3 }}>
+            {project1 &&
+              first?.map((img, i) => (
+                <div
+                  key={i}
+                  onClick={() => {
+                    setSelected(list[i].modal);
+                  }}
+                >
+                  <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+                </div>
+              ))}
+            {project2 &&
+              second?.map((img, i) => (
+                <div
+                  key={i}
+                  onClick={() => {
+                    setSelected(list[i].modal);
+                  }}
+                >
+                  <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+                </div>
+              ))}
+            {contact && (
+              <div className="mobile-contact">
+                <Contact />
+                <Location />
               </div>
-            ))}
+            )}
           </div>
         </div>
       )}

@@ -6,7 +6,9 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
-    console.log(info);
+  };
+  const handleSubmit = () => {
+    alert("submit");
   };
   return (
     <div id="contact">
@@ -51,6 +53,10 @@ const Contact = () => {
           value={info?.content}
         />
       </form>
+
+      <span className="btn" onClick={handleSubmit}>
+        ENTER
+      </span>
     </div>
   );
 };

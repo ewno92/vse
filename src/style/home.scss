@@ -26,7 +26,6 @@ $MAX_WIDTH: 1000px;
       padding: 0;
       height: 100vh;
     }
-
     .mobile-info-wrap {
       position: fixed;
     }
@@ -37,35 +36,29 @@ $MAX_WIDTH: 1000px;
       position: fixed;
       top: 0;
       right: 0;
-    }
-
-    #btn-wrap {
-      word-break: keep-all;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      margin-top: 40px;
-      padding-right: 10px;
-      a {
-        text-decoration: none;
-        color: black;
-      }
-      .copy-right {
-        text-decoration: underline;
-      }
-
-      .underline {
-        text-decoration: overline;
-      }
-      .information-wrap {
-        writing-mode: vertical-rl;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-        .rotate {
-          text-align: initial;
-          cursor: pointer;
+      #btn-wrap {
+        word-break: keep-all;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 30px;
+        padding-right: 4px;
+        .information-wrap {
+          writing-mode: vertical-rl;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          .rotate {
+            text-align: initial;
+            cursor: pointer;
+          }
+        }
+        span {
+          margin-left: 5px;
         }
       }
+    }
+    .mobile-contact {
+      padding: 0 10px;
     }
   }
 }
