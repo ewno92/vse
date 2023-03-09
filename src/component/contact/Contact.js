@@ -7,24 +7,24 @@ const Contact = () => {
     setInfo({ ...info, [name]: value });
   };
   const url =
-    "https://script.google.com/macros/s/AKfycbx38JNWCcb6dWA-V1RS78JpbEg79kGYsj1xYopOp4_G5pMy4AEnVWGkuT7Or2VJWwRYiA/exec";
+    "https://script.google.com/macros/s/AKfycbwhduB8nxCiKrgoIwOA1XhaTiORzWXrhxWg8VNQ8evKShpsAJTElTr7B0M-g9EBpUr4qA/exec";
   const handleSubmit = async (e) => {
     // alert("submit");
-    // const res = await doPost(url, {
-    //   name: info.name,
-    //   email: info.email,
-    //   number: info.number,
-    //   content: info.content,
-    // });
-    console.log(e);
     setInfo({
       name: "",
       email: "",
       number: "",
       content: "",
     });
-    console.log(info);
-    console.log("@@@");
+    const res = await doPost(url, {
+      name: info.name,
+      email: info.email,
+      number: info.number,
+      content: info.content,
+    });
+    // console.log(e);
+    // console.log(info);
+    // console.log("@@@");
   };
   return (
     <div id="contact">
