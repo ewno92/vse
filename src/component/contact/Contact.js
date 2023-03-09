@@ -7,17 +7,24 @@ const Contact = () => {
     setInfo({ ...info, [name]: value });
   };
   const url =
-    "https://script.google.com/macros/s/AKfycbxbhw1-NIVBUnB133k8-kC8MrXaDI9QrjuMjVXrgZvcpV8SyHCgzpfz2jb1nbeZTNkN/exec";
-  const handleSubmit = async () => {
-    alert("submit");
-    const res = await doPost(url, {
-      name: info.name,
-      email: info.email,
-      number: info.number,
-      content: info.content,
+    "https://script.google.com/macros/s/AKfycbx38JNWCcb6dWA-V1RS78JpbEg79kGYsj1xYopOp4_G5pMy4AEnVWGkuT7Or2VJWwRYiA/exec";
+  const handleSubmit = async (e) => {
+    // alert("submit");
+    // const res = await doPost(url, {
+    //   name: info.name,
+    //   email: info.email,
+    //   number: info.number,
+    //   content: info.content,
+    // });
+    console.log(e);
+    setInfo({
+      name: "",
+      email: "",
+      number: "",
+      content: "",
     });
-    console.log(res);
-    // const res = await signin("auth/login", userData);
+    console.log(info);
+    console.log("@@@");
   };
   return (
     <div id="contact">
@@ -29,6 +36,7 @@ const Contact = () => {
           onChange={handleChange}
           required="required"
           placeholder="이름"
+          value={info?.name}
         />
         <label htmlFor="bc_subtitle">PHONE NUMBER 전화번호</label>
         <input
@@ -45,6 +53,7 @@ const Contact = () => {
           required="required"
           placeholder="메일"
           name="email"
+          value={info?.email}
           onChange={handleChange}
         />
         <label htmlFor="bc_content">
