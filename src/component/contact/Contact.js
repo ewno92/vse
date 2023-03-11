@@ -1,30 +1,52 @@
 import React, { useState } from "react";
 import { doPost } from "../utils";
+const URL =
+  "https://script.google.com/macros/s/AKfycbwhduB8nxCiKrgoIwOA1XhaTiORzWXrhxWg8VNQ8evKShpsAJTElTr7B0M-g9EBpUr4qA/exec";
+
 const Contact = () => {
   const [info, setInfo] = useState({});
+  const [error, setError] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // setError("");
     setInfo({ ...info, [name]: value });
   };
-  const url =
-    "https://script.google.com/macros/s/AKfycbwhduB8nxCiKrgoIwOA1XhaTiORzWXrhxWg8VNQ8evKShpsAJTElTr7B0M-g9EBpUr4qA/exec";
+  const cherckError = () => {
+    if (!info?.name) {
+      setError("이름을 입력하세요");
+      return;
+    } else if (!info?.number) {
+      setError("전화번호를 입력하세요");
+      return;
+    } else if (!info?.number) {
+      setError("전화번호를 입력하세요");
+      return;
+    } else if (!info?.email) {
+      setError("이메일을 입력하세요");
+      return;
+    } else if (!info?.content) {
+      setError("내용을 입력하세요");
+      return;
+    }
+    return true;
+  };
   const handleSubmit = async (e) => {
     // alert("submit");
-    setInfo({
-      name: "",
-      email: "",
-      number: "",
-      content: "",
-    });
-    const res = await doPost(url, {
-      name: info.name,
-      email: info.email,
-      number: info.number,
-      content: info.content,
-    });
-    // console.log(e);
-    // console.log(info);
-    // console.log("@@@");
+    const check = cherckError();
+    if (check) {
+      setInfo({
+        name: "",
+        email: "",
+        number: "",
+        content: "",
+      });
+      // const res = await doPost(URL, {
+      //   name: info.name,
+      //   email: info.email,
+      //   number: info.number,
+      //   content: info.content,
+      // });
+    }
   };
   return (
     <div id="contact">
@@ -72,6 +94,7 @@ const Contact = () => {
         />
       </form>
       <div className="btn-wrap">
+        <p className="error">{error}</p>
         <span className="btn enter" onClick={handleSubmit}>
           ENTER
         </span>
