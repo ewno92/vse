@@ -137,8 +137,10 @@ const Home = () => {
               ))}
             {contact && (
               <div className="mobile-contact">
-                <Contact />
-                <Location />
+                <div className="contact-wrap">
+                  <Contact />
+                  <Location />
+                </div>
               </div>
             )}
           </div>
