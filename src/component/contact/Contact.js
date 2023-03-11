@@ -10,6 +10,7 @@ const Contact = () => {
     const { name, value } = e.target;
     // setError("");
     setInfo({ ...info, [name]: value });
+    setError("");
   };
   const cherckError = () => {
     if (!info?.name) {
