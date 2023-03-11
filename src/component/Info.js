@@ -12,7 +12,7 @@ const Info = () => {
               </div>
               <div className="en">
                 {/* <span className="underline">1F,3, Maeheon-ro 6-gil,</span> */}
-                <br />
+                {/* <br /> */}
                 <span className="underline">Busanjin-gu, Busan, Korea</span>
               </div>
             </a>
