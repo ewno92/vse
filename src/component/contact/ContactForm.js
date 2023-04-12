@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Contact from "./Contact";
 import Location from "./Location";
-const ContactForm = () => {
-  const [contact, setContact] = useState(false);
+const ContactForm = ({ maintenance }) => {
+  const [contact, setContact] = useState(maintenance ? true : false);
   const [location, setLocation] = useState(false);
 
   return (

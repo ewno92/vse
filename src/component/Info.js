@@ -9,7 +9,7 @@ const Info = () => {
             <a href="https://vse.vercel.com" className="map" target="_blank">
               <div className="ko">
                 <span className="underline address">
-                  부산광역시 중앙대로 800 406호
+                  부산광역시 중앙대로 800
                 </span>
               </div>
               <div className="en">

@@ -8,7 +8,9 @@ import ContactForm from "../component/contact/ContactForm";
 import { useState } from "react";
 import Contact from "../component/contact/Contact";
 import Location from "../component/contact/Location";
+import Maintenance from "../component/Maintenance";
 const MAX_WIDTH = 1000;
+const MAINTENANCE_MODE = 1;
 const Home = () => {
   const { width } = useWindowDimensions();
   const list = [...first, ...second];
@@ -17,7 +19,7 @@ const Home = () => {
   //mobile btn
   const [project1, setProject1] = useState(true);
   const [project2, setProject2] = useState(false);
-  const [contact, setContact] = useState(false);
+  const [contact, setContact] = useState(MAINTENANCE_MODE ? true : false);
   return (
     <div id="home">
       <h1 className="logo">VSE</h1>
@@ -25,32 +27,40 @@ const Home = () => {
       {width > MAX_WIDTH && (
         <div className="col desktop-view">
           <div>
-            {first?.map((img, i) => (
-              <div
-                key={i}
-                onClick={() => {
-                  setSelected(first[i].modal);
-                }}
-              >
-                <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
-              </div>
-            ))}
+            {MAINTENANCE_MODE ? (
+              <></>
+            ) : (
+              first?.map((img, i) => (
+                <div
+                  key={i}
+                  onClick={() => {
+                    setSelected(first[i].modal);
+                  }}
+                >
+                  <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+                </div>
+              ))
+            )}
           </div>
         </div>
       )}
       {width > MAX_WIDTH && (
         <div className="col desktop-view">
           <div>
-            {second?.map((img, i) => (
-              <div
-                key={i}
-                onClick={() => {
-                  setSelected(second[i]?.modal);
-                }}
-              >
-                <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
-              </div>
-            ))}
+            {MAINTENANCE_MODE ? (
+              <Maintenance />
+            ) : (
+              second?.map((img, i) => (
+                <div
+                  key={i}
+                  onClick={() => {
+                    setSelected(second[i]?.modal);
+                  }}
+                >
+                  <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
+                </div>
+              ))
+            )}
           </div>
         </div>
       )}
@@ -58,7 +68,7 @@ const Home = () => {
         <div className="col">
           <div className="info-wrap">
             <Info />
-            <ContactForm />
+            <ContactForm maintenance={MAINTENANCE_MODE} />
           </div>
         </div>
       )}
@@ -113,7 +123,10 @@ const Home = () => {
             <Info />
           </div>
           <div style={{ background: "white", paddingTop: "380px", zIndex: 3 }}>
-            {project1 &&
+            {MAINTENANCE_MODE ? (
+              <Maintenance />
+            ) : (
+              project1 &&
               first?.map((img, i) => (
                 <div
                   key={i}
@@ -123,8 +136,12 @@ const Home = () => {
                 >
                   <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
                 </div>
-              ))}
-            {project2 &&
+              ))
+            )}
+            {MAINTENANCE_MODE ? (
+              <div></div>
+            ) : (
+              project2 &&
               second?.map((img, i) => (
                 <div
                   key={i}
@@ -134,7 +151,8 @@ const Home = () => {
                 >
                   <HomeGallery key={i} item={img} index={formatNumber(i + 1)} />
                 </div>
-              ))}
+              ))
+            )}
             {contact && (
               <div className="mobile-contact">
                 <div className="contact-wrap">
