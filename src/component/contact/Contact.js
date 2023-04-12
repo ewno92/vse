@@ -41,12 +41,16 @@ const Contact = () => {
         number: "",
         content: "",
       });
-      // const res = await doPost(URL, {
-      //   name: info.name,
-      //   email: info.email,
-      //   number: info.number,
-      //   content: info.content,
-      // });
+      const res = await doPost(URL, {
+        name: info.name,
+        email: info.email,
+        number: info.number,
+        content: info.content,
+      });
+      if (res?.status === "success") alert("문의 감사합니다.");
+      else {
+        alert("오류가 발생했습니다. 나중에 다시 시도해주세요.");
+      }
     }
   };
   return (
