@@ -26,7 +26,7 @@ const Info = () => {
             <a href="https://vse.vercel.app/">vse.vercel.app</a>
           </div>
           <div>
-            <a href="https://www.instagram.com/atelier_vse" target="_blank">
+            <a href="https://www.instagram.com/atelier_vse/" target="_blank">
               <span className="underline">INSTAGRAM</span>
             </a>
           </div>
