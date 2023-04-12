@@ -13,7 +13,17 @@ const Maintenance = () => {
       </h2>
       <h2>정비중에는 문의하기만 가능합니다.</h2>
       <h2>더 나은 모습으로 찾아뵙겠습니다. 양해 부탁드립니다.</h2>
+
+      <a
+        className="icon-wrapper"
+        target="_blank"
+        href="https://drive.google.com/file/d/1Fl5IaxvWsZPW--Kr3790guRLNkslPa3q/view?usp=sharing"
+      >
+        <img src="/PDF.png" />
+      </a>
+      <h5>포트폴리오</h5>
       <hr />
+      {/* https://drive.google.com/file/d/1Fl5IaxvWsZPW--Kr3790guRLNkslPa3q/view?usp=sharing */}
     </div>
   );
 };
